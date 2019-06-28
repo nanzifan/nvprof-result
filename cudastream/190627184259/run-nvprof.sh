@@ -11,8 +11,8 @@ echo "new folder" $newFolder
 commands=(
 	"--track-memory-allocations on"
 	"--print-gpu-trace"
-	"--cpu-thread-tracing"
-	"--cpu-profiling"
+	"--cpu-thread-tracing on"
+	"--cpu-profiling on"
 	)
 
 for i in "${commands[@]}"; do
