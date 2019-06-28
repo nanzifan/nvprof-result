@@ -17,7 +17,7 @@ commands=(
 
 for i in "${commands[@]}"; do
 	echo $i
-	filename=${$i | cut -d' ' -f 1}
+	filename=$(echo $i|cut -d' ' -f 1)
 	logName="$newFolder/$filename.txt"
 	/usr/local/cuda/bin/nvprof --$i --log-file $logName $1 $2	
 done
