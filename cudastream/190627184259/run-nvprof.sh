@@ -17,7 +17,7 @@ commands=(
 
 for i in "${commands[@]}"; do
 	logName="$newFolder/$i.txt"
-	/usr/local/cuda/bin/nvprof --($i) --log-file $logName $1 $2
+	/usr/local/cuda/bin/nvprof --$i --log-file $logName $1 $2
 	echo $i
 done
 
