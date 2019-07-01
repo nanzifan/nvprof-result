@@ -5,7 +5,7 @@ subFolder=${PWD##*/}
 
 newFolder="$logFolder$subFolder"
 
-mkdir newFolder
+mkdir $newFolder
 echo "new folder" $newFolder
 
 commands=(
