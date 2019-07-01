@@ -1,0 +1,162 @@
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 80.32%  9.00276s  ???
+ 79.96%  8.96266s  | start_thread
+ 79.96%  8.96266s  | | __clone
+  0.18%  20.051ms  | cudaSetupArgument
+  0.09%  10.025ms  | | __device_stub__Z14cuda_time_stepiiPfS_S_S_(int, int, float*, float*, float*, float*)
+  0.09%  10.025ms  | | | time_step(int, int, float*, float*, float*, float*)
+  0.09%  10.025ms  | | |   main
+  0.09%  10.025ms  | | __device_stub__Z17cuda_compute_fluxiPiPfS0_S0_(int, int*, float*, float*, float*)
+  0.09%  10.025ms  | |   compute_flux(int, int*, float*, float*, float*)
+  0.09%  10.025ms  | |     main
+  0.09%  10.025ms  | cudaGetLastError
+  0.09%  10.025ms  | | main
+  0.09%  10.025ms  | cudaConfigureCall
+  0.09%  10.025ms  |   time_step(int, int, float*, float*, float*, float*)
+  0.09%  10.025ms  |     main
+  9.39%  1.05266s  cuDevicePrimaryCtxRetain
+  9.39%  1.05266s  | cudart::contextStateManager::initPrimaryContext(cudart::device*)
+  9.39%  1.05266s  |   cudart::contextStateManager::initDriverContext(void)
+  9.39%  1.05266s  |     cudart::contextStateManager::getRuntimeContextState(cudart::contextState**, bool)
+  9.39%  1.05266s  |       cudart::cudaApiMemcpyToSymbolCommon(void const *, void const *, unsigned long, unsigned long, cudaMemcpyKind, bool)
+  9.39%  1.05266s  |         cudaMemcpyToSymbol
+  9.39%  1.05266s  |           main
+  2.86%  320.81ms  cuMemcpyDtoD_v2
+  2.86%  320.81ms  | cudart::driverHelper::memcpyDispatch(void*, void const *, unsigned long, cudaMemcpyKind, bool)
+  2.86%  320.81ms  |   cudart::cudaApiMemcpy(void*, void const *, unsigned long, cudaMemcpyKind)
+  2.86%  320.81ms  |     cudaMemcpy
+  2.86%  320.81ms  |       xplacer_memcpy
+  2.86%  320.81ms  |         main
+  2.24%  250.63ms  ???
+  1.34%  150.38ms  | void std::__convert_to_v<float>(char const *, float&, std::_Ios_Iostate&, __locale_struct* const &)
+  1.34%  150.38ms  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  1.34%  150.38ms  | |   _ZNSi10_M_extractIfEERSiRT_
+  1.34%  150.38ms  | |     main
+  0.54%  60.152ms  | ???
+  0.45%  50.127ms  | | void std::__convert_to_v<float>(char const *, float&, std::_Ios_Iostate&, __locale_struct* const &)
+  0.45%  50.127ms  | | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.45%  50.127ms  | | |   _ZNSi10_M_extractIfEERSiRT_
+  0.45%  50.127ms  | | |     main
+  0.09%  10.025ms  | | ???
+  0.09%  10.025ms  | |   void std::__convert_to_v<float>(char const *, float&, std::_Ios_Iostate&, __locale_struct* const &)
+  0.09%  10.025ms  | |     _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.09%  10.025ms  | |       _ZNSi10_M_extractIfEERSiRT_
+  0.09%  10.025ms  | |         main
+  0.27%  30.076ms  | free
+  0.27%  30.076ms  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.27%  30.076ms  | |   _ZNSi10_M_extractIfEERSiRT_
+  0.27%  30.076ms  | |     main
+  0.09%  10.025ms  | malloc
+  0.09%  10.025ms  |   __operator_new__(unsigned long)
+  0.09%  10.025ms  |     _ZNSs4_Rep9_S_createEmmRKSaIcE
+  0.09%  10.025ms  |       _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.09%  10.025ms  |         _ZNSs7reserveEm
+  0.09%  10.025ms  |           _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.09%  10.025ms  |             _ZNSi10_M_extractIfEERSiRT_
+  0.09%  10.025ms  |               main
+  0.98%  110.28ms  cuInit
+  0.98%  110.28ms  | cudart::globalState::loadDriverInternal(void)
+  0.98%  110.28ms  |   cudart::__loadDriverInternalUtil(void)
+  0.98%  110.28ms  |     __pthread_once_slow
+  0.98%  110.28ms  |       cudart::cuosOnce(int*, void (*) (void))
+  0.98%  110.28ms  |         cudart::globalState::initializeDriver(void)
+  0.98%  110.28ms  |           cudaSetDevice
+  0.98%  110.28ms  |             main
+  0.63%  70.177ms  _ZNSs9push_backEc
+  0.63%  70.177ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.63%  70.177ms  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.63%  70.177ms  |     _ZNSi10_M_extractIfEERSiRT_
+  0.63%  70.177ms  |       main
+  0.63%  70.177ms  cuLaunchKernel
+  0.63%  70.177ms  | cudart::cudaApiLaunchCommon(void const *, bool)
+  0.63%  70.177ms  |   cudaLaunch
+  0.36%  40.101ms  |     __device_stub__Z17cuda_compute_fluxiPiPfS0_S0_(int, int*, float*, float*, float*)
+  0.36%  40.101ms  |     | compute_flux(int, int*, float*, float*, float*)
+  0.36%  40.101ms  |     |   main
+  0.18%  20.051ms  |     __device_stub__Z14cuda_time_stepiiPfS_S_S_(int, int, float*, float*, float*, float*)
+  0.18%  20.051ms  |     | time_step(int, int, float*, float*, float*, float*)
+  0.18%  20.051ms  |     |   main
+  0.09%  10.025ms  |     __device_stub__Z24cuda_compute_step_factoriPfS_S_(int, float*, float*, float*)
+  0.09%  10.025ms  |       compute_step_factor(int, float*, float*, float*)
+  0.09%  10.025ms  |         main
+  0.63%  70.177ms  ???
+  0.36%  40.101ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.36%  40.101ms  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.36%  40.101ms  | |   _ZNSi10_M_extractIfEERSiRT_
+  0.36%  40.101ms  | |     main
+  0.09%  10.025ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE14_M_extract_intIlEES3_S3_S3_RSt8ios_baseRSt12_Ios_IostateRT_
+  0.09%  10.025ms  | | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRl
+  0.09%  10.025ms  | |   _ZNSirsERi
+  0.09%  10.025ms  | |     main
+  0.09%  10.025ms  | _ZNSs4_Rep9_S_createEmmRKSaIcE
+  0.09%  10.025ms  | | _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.09%  10.025ms  | |   _ZNSs7reserveEm
+  0.09%  10.025ms  | |     _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.09%  10.025ms  | |       _ZNSi10_M_extractIfEERSiRT_
+  0.09%  10.025ms  | |         main
+  0.09%  10.025ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.09%  10.025ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.09%  10.025ms  |     main
+  0.54%  60.152ms  _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.54%  60.152ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.54%  60.152ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.54%  60.152ms  |     main
+  0.36%  40.101ms  _ZNSi6sentryC1ERSib
+  0.18%  20.051ms  | _ZNSirsERi
+  0.18%  20.051ms  | | main
+  0.18%  20.051ms  | _ZNSi10_M_extractIfEERSiRT_
+  0.18%  20.051ms  |   main
+  0.27%  30.076ms  _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.27%  30.076ms  | _ZNSi10_M_extractIfEERSiRT_
+  0.27%  30.076ms  |   main
+  0.18%  20.051ms  cudart::getGlobalState(void)
+  0.18%  20.051ms  | ???
+  0.09%  10.025ms  |   ???
+  0.09%  10.025ms  |   cuda_time_step(int, int, float*, float*, float*, float*)
+  0.18%  20.051ms  malloc
+  0.18%  20.051ms  | __operator_new__(unsigned long)
+  0.18%  20.051ms  |   _ZNSs4_Rep9_S_createEmmRKSaIcE
+  0.18%  20.051ms  |     _ZNSs4_Rep8_M_cloneERKSaIcEm
+  0.18%  20.051ms  |       _ZNSs7reserveEm
+  0.18%  20.051ms  |         _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.18%  20.051ms  |           _ZNSi10_M_extractIfEERSiRT_
+  0.18%  20.051ms  |             main
+  0.18%  20.051ms  cuMemAllocManaged
+  0.18%  20.051ms  | cudart::driverHelper::mallocManagedPtr(unsigned long, unsigned int, void**)
+  0.18%  20.051ms  |   cudart::cudaApiMallocManaged(void**, unsigned long, unsigned int)
+  0.18%  20.051ms  |     cudaMallocManaged
+  0.18%  20.051ms  |       xplacer_malloc
+  0.18%  20.051ms  |         main
+  0.09%  10.025ms  _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE14_M_extract_intIlEES3_S3_S3_RSt8ios_baseRSt12_Ios_IostateRT_
+  0.09%  10.025ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRl
+  0.09%  10.025ms  |   _ZNSirsERi
+  0.09%  10.025ms  |     main
+  0.09%  10.025ms  _ZNSirsERi
+  0.09%  10.025ms  | main
+  0.09%  10.025ms  std::istreambuf_iterator<char, void std::char_traits<char>()>::__operator_++__
+  0.09%  10.025ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE16_M_extract_floatES3_S3_RSt8ios_baseRSt12_Ios_IostateRSs
+  0.09%  10.025ms  |   _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.09%  10.025ms  |     _ZNSi10_M_extractIfEERSiRT_
+  0.09%  10.025ms  |       main
+  0.09%  10.025ms  _ZNSi10_M_extractIfEERSiRT_
+  0.09%  10.025ms  | main
+  0.09%  10.025ms  free
+  0.09%  10.025ms  | _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRf
+  0.09%  10.025ms  |   _ZNSi10_M_extractIfEERSiRT_
+  0.09%  10.025ms  |     main
+  0.09%  10.025ms  cudart::configData::addArgument(void const *, unsigned long, unsigned long)
+  0.09%  10.025ms  | cudart::cudaApiSetupArgument(void const *, unsigned long, unsigned long)
+  0.09%  10.025ms  |   cudaSetupArgument
+  0.09%  10.025ms  |     __device_stub__Z14cuda_time_stepiiPfS_S_S_(int, int, float*, float*, float*, float*)
+  0.09%  10.025ms  |       time_step(int, int, float*, float*, float*, float*)
+  0.09%  10.025ms  |         main
+  0.09%  10.025ms  _ZNKSt6locale2id5_M_idEv
+  0.09%  10.025ms    ???
+  0.09%  10.025ms      _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE14_M_extract_intIlEES3_S3_S3_RSt8ios_baseRSt12_Ios_IostateRT_
+  0.09%  10.025ms        _ZNKSt7num_getIcSt19istreambuf_iteratorIcSt11char_traitsIcEEE6do_getES3_S3_RSt8ios_baseRSt12_Ios_IostateRl
+  0.09%  10.025ms          _ZNSirsERi
+  0.09%  10.025ms            main
+
+======== Data collected at 100Hz frequency

@@ -1,0 +1,37 @@
+==186276== NVPROF is profiling process 186276, command: ./euler3d_adapt ../../data/cfd/fvcorr.domn.097K
+==186276== Profiling application: ./euler3d_adapt ../../data/cfd/fvcorr.domn.097K
+==186276== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   70.91%  302.24ms      6000  50.373us  43.362us  1.7613ms  cuda_compute_flux(int, int*, float*, float*, float*)
+                   20.58%  87.707ms      6000  14.617us  13.889us  16.672us  cuda_time_step(int, int, float*, float*, float*, float*)
+                    4.70%  20.035ms      2000  10.017us  9.2800us  19.937us  [CUDA memcpy DtoD]
+                    3.58%  15.241ms      2000  7.6200us  6.6560us  405.75us  cuda_compute_step_factor(int, float*, float*, float*)
+                    0.23%  974.15us         3  324.72us  219.40us  475.22us  cuda_initialize_variables(int, float*)
+                    0.00%  4.1280us         5     825ns     768ns     992ns  [CUDA memcpy HtoD]
+                    0.00%  1.1840us         1  1.1840us  1.1840us  1.1840us  [CUDA memset]
+      API calls:   69.20%  1.05435s         5  210.87ms  6.3200us  1.05432s  cudaMemcpyToSymbol
+                   21.82%  332.42ms      2000  166.21us  27.543us  2.2795ms  cudaMemcpy
+                    6.07%  92.439ms     14003  6.6010us  6.1350us  605.17us  cudaLaunch
+                    1.38%  20.955ms         7  2.9935ms  23.767us  20.245ms  cudaMallocManaged
+                    0.86%  13.144ms     74006     177ns     129ns  624.17us  cudaSetupArgument
+                    0.27%  4.1046ms     28003     146ns     124ns  2.6930us  cudaGetLastError
+                    0.20%  3.0971ms     14003     221ns     151ns  607.22us  cudaConfigureCall
+                    0.06%  916.75us        10  91.674us     603ns  310.99us  cudaFree
+                    0.04%  624.85us         1  624.85us  624.85us  624.85us  cudaMemset
+                    0.03%  435.31us         7  62.187us  2.4290us  378.53us  cudaMemAdvise
+                    0.02%  362.56us         1  362.56us  362.56us  362.56us  cuDeviceTotalMem
+                    0.02%  302.63us        94  3.2190us     157ns  130.38us  cuDeviceGetAttribute
+                    0.02%  287.19us         1  287.19us  287.19us  287.19us  cudaGetDeviceProperties
+                    0.01%  140.65us         2  70.327us  4.0730us  136.58us  cudaThreadSynchronize
+                    0.00%  30.882us         1  30.882us  30.882us  30.882us  cuDeviceGetName
+                    0.00%  7.9040us         1  7.9040us  7.9040us  7.9040us  cudaSetDevice
+                    0.00%  2.6050us         3     868ns     212ns  2.0280us  cuDeviceGetCount
+                    0.00%  1.4030us         1  1.4030us  1.4030us  1.4030us  cudaGetDevice
+                    0.00%  1.1880us         2     594ns     244ns     944ns  cuDeviceGet
+
+==186276== Unified Memory profiling result:
+Device "TITAN Xp (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     176  36.682KB  4.0000KB  604.00KB  6.304688MB  740.8320us  Host To Device
+      17         -         -         -           -  3.164320ms  Gpu page fault groups
+Total CPU Page faults: 49
