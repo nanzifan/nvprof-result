@@ -1,0 +1,27 @@
+==181001== NVPROF is profiling process 181001, command: ./bfs_adapt ../../data/bfs/graph65536.txt
+==181001== Profiling application: ./bfs_adapt ../../data/bfs/graph65536.txt
+==181001== Warning: 2 records have invalid timestamps due to insufficient device buffer space. You can configure the buffer space using the option --device-buffer-size.
+==181001== Profiling result:
+No kernels were profiled.
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+      API calls:   97.71%  247.05ms         7  35.292ms  3.1539ms  227.82ms  cudaMallocManaged
+                    1.96%  4.9565ms         6  826.09us     457ns  4.9524ms  cudaFree
+                    0.15%  375.68us         1  375.68us  375.68us  375.68us  cuDeviceTotalMem
+                    0.13%  336.39us        94  3.5780us     172ns  145.18us  cuDeviceGetAttribute
+                    0.02%  60.649us         2  30.324us  10.944us  49.705us  cudaLaunch
+                    0.01%  33.269us         1  33.269us  33.269us  33.269us  cuDeviceGetName
+                    0.00%  11.286us         1  11.286us  11.286us  11.286us  cudaMemAdvise
+                    0.00%  5.3400us        12     445ns     140ns  3.2960us  cudaSetupArgument
+                    0.00%  2.2920us         3     764ns     209ns  1.6860us  cuDeviceGetCount
+                    0.00%  1.7470us         2     873ns     292ns  1.4550us  cudaConfigureCall
+                    0.00%     895ns         2     447ns     202ns     693ns  cuDeviceGet
+
+==181001== Unified Memory profiling result:
+Device "TITAN Xp (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      29  30.897KB  4.0000KB  64.000KB  896.0000KB  111.7440us  Host To Device
+      25  20.319KB  4.0000KB  188.00KB  508.0000KB  56.35200us  Device To Host
+      12         -         -         -           -  829.0560us  Gpu page fault groups
+      32  4.0000KB  4.0000KB  4.0000KB  128.0000KB           -  Memory thrashes
+Total CPU Page faults: 155
+Total CPU thrashes: 32

@@ -1,0 +1,62 @@
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 78.47%  1.66762s  ???
+ 78.47%  1.66762s  | start_thread
+ 78.47%  1.66762s  |   __clone
+  9.09%   193.2ms  cuDevicePrimaryCtxRetain
+  9.09%   193.2ms  | cudart::contextStateManager::initPrimaryContext(cudart::device*)
+  9.09%   193.2ms  |   cudart::contextStateManager::initDriverContext(void)
+  9.09%   193.2ms  |     cudart::contextStateManager::getRuntimeContextState(cudart::contextState**, bool)
+  9.09%   193.2ms  |       cudart::doLazyInitContextState(void)
+  9.09%   193.2ms  |         cudart::cudaApiMallocManaged(void**, unsigned long, unsigned int)
+  9.09%   193.2ms  |           cudaMallocManaged
+  9.09%   193.2ms  |             xplacer_malloc
+  9.09%   193.2ms  |               BFSGraph(int, char**)
+  9.09%   193.2ms  |                 main
+  5.74%  122.02ms  cuInit
+  5.74%  122.02ms  | cudart::globalState::loadDriverInternal(void)
+  5.74%  122.02ms  |   cudart::__loadDriverInternalUtil(void)
+  5.74%  122.02ms  |     __pthread_once_slow
+  5.74%  122.02ms  |       cudart::cuosOnce(int*, void (*) (void))
+  5.74%  122.02ms  |         cudart::globalState::initializeDriver(void)
+  5.74%  122.02ms  |           cudaMallocManaged
+  5.74%  122.02ms  |             xplacer_malloc
+  5.74%  122.02ms  |               BFSGraph(int, char**)
+  5.74%  122.02ms  |                 main
+  3.35%  71.179ms  _IO_vfscanf
+  3.35%  71.179ms  | fscanf
+  3.35%  71.179ms  |   BFSGraph(int, char**)
+  3.35%  71.179ms  |     main
+  0.96%  20.337ms  cuMemAllocManaged
+  0.96%  20.337ms  | cudart::driverHelper::mallocManagedPtr(unsigned long, unsigned int, void**)
+  0.96%  20.337ms  |   cudart::cudaApiMallocManaged(void**, unsigned long, unsigned int)
+  0.96%  20.337ms  |     cudaMallocManaged
+  0.96%  20.337ms  |       xplacer_malloc
+  0.96%  20.337ms  |         BFSGraph(int, char**)
+  0.96%  20.337ms  |           main
+  0.48%  10.168ms  open
+  0.48%  10.168ms  | _IO_file_open
+  0.48%  10.168ms  |   _IO_file_fopen
+  0.48%  10.168ms  |     ???
+  0.48%  10.168ms  |       BFSGraph(int, char**)
+  0.48%  10.168ms  |         main
+  0.48%  10.168ms  ???
+  0.48%  10.168ms  | _IO_vfscanf
+  0.48%  10.168ms  |   fscanf
+  0.48%  10.168ms  |     BFSGraph(int, char**)
+  0.48%  10.168ms  |       main
+  0.48%  10.168ms  _pthread_cleanup_pop_restore
+  0.48%  10.168ms  | vfprintf
+  0.48%  10.168ms  |   fprintf
+  0.48%  10.168ms  |     BFSGraph(int, char**)
+  0.48%  10.168ms  |       main
+  0.48%  10.168ms  _IO_sputbackc
+  0.48%  10.168ms  | _IO_vfscanf
+  0.48%  10.168ms  |   fscanf
+  0.48%  10.168ms  |     BFSGraph(int, char**)
+  0.48%  10.168ms  |       main
+  0.48%  10.168ms  BFSGraph(int, char**)
+  0.48%  10.168ms    main
+
+======== Data collected at 100Hz frequency
