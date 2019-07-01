@@ -1,0 +1,76 @@
+
+======== CPU profiling result (bottom up):
+Time(%)      Time  Name
+ 70.83%  5.30305s  ???
+ 70.83%  5.30305s  | start_thread
+ 70.83%  5.30305s  |   __clone
+  7.53%  563.51ms  cuMemcpyDtoH_v2
+  7.53%  563.51ms  | cudart::driverHelper::memcpyDispatch(void*, void const *, unsigned long, cudaMemcpyKind, bool)
+  7.53%  563.51ms  |   cudart::cudaApiMemcpy(void*, void const *, unsigned long, cudaMemcpyKind)
+  7.53%  563.51ms  |     cudaMemcpy
+  4.70%   352.2ms  |       CUDAStream<double>::read_arrays(std::vector<double, std::allocator<double>>&, std::vector<double, std::allocator<double>>&, std::vector<double, std::allocator<double>>&)
+  4.70%   352.2ms  |       | void run<double>(void)
+  4.70%   352.2ms  |       |   main
+  2.82%  211.32ms  |       CUDAStream<double>::dot(void)
+  2.82%  211.32ms  |         void run<double>(void)
+  2.82%  211.32ms  |           main
+  7.12%  533.32ms  cuCtxSynchronize
+  7.12%  533.32ms  | cudart::cudaApiDeviceSynchronize(void)
+  7.12%  533.32ms  |   cudaDeviceSynchronize
+  2.82%  211.32ms  |     CUDAStream<double>::mul(void)
+  2.82%  211.32ms  |     | void run<double>(void)
+  2.82%  211.32ms  |     |   main
+  2.55%  191.19ms  |     CUDAStream<double>::triad(void)
+  2.55%  191.19ms  |     | void run<double>(void)
+  2.55%  191.19ms  |     |   main
+  1.21%  90.564ms  |     CUDAStream<double>::add(void)
+  1.21%  90.564ms  |     | void run<double>(void)
+  1.21%  90.564ms  |     |   main
+  0.54%  40.251ms  |     CUDAStream<double>::copy(void)
+  0.54%  40.251ms  |       void run<double>(void)
+  0.54%  40.251ms  |         main
+  6.32%  472.95ms  ???
+  6.32%  472.95ms  | void run<double>(void)
+  6.32%  472.95ms  |   main
+  3.23%  241.51ms  void check_solution<double>(unsigned int, std::vector<double, std::allocator<double>>&, std::vector<double, std::allocator<double>>&, std::vector<double, std::allocator<double>>&, double&)
+  3.23%  241.51ms  | void run<double>(void)
+  3.23%  241.51ms  |   main
+  2.55%  191.19ms  cuDevicePrimaryCtxRetain
+  2.55%  191.19ms  | cudart::contextStateManager::initPrimaryContext(cudart::device*)
+  2.55%  191.19ms  |   cudart::contextStateManager::initDriverContext(void)
+  2.55%  191.19ms  |     cudart::contextStateManager::getRuntimeContextState(cudart::contextState**, bool)
+  2.55%  191.19ms  |       cudart::doLazyInitContextState(void)
+  2.55%  191.19ms  |         cudart::cudaApiMalloc(void**, unsigned long)
+  2.55%  191.19ms  |           cudaMalloc
+  2.55%  191.19ms  |             CUDAStream<double>::__base_object_constructor__(unsigned int, int)
+  2.55%  191.19ms  |               void run<double>(void)
+  2.55%  191.19ms  |                 main
+  1.75%  130.82ms  cuInit
+  1.75%  130.82ms  | cudart::globalState::loadDriverInternal(void)
+  1.75%  130.82ms  |   cudart::__loadDriverInternalUtil(void)
+  1.75%  130.82ms  |     __pthread_once_slow
+  1.75%  130.82ms  |       cudart::cuosOnce(int*, void (*) (void))
+  1.75%  130.82ms  |         cudart::globalState::initializeDriver(void)
+  1.75%  130.82ms  |           cudaGetDeviceCount
+  1.75%  130.82ms  |             CUDAStream<double>::__base_object_constructor__(unsigned int, int)
+  1.75%  130.82ms  |               void run<double>(void)
+  1.75%  130.82ms  |                 main
+  0.40%  30.188ms  munmap
+  0.40%  30.188ms  | free
+  0.40%  30.188ms  |   void run<double>(void)
+  0.40%  30.188ms  |     main
+  0.13%  10.063ms  cuLaunchKernel
+  0.13%  10.063ms  | cudart::cudaApiLaunchCommon(void const *, bool)
+  0.13%  10.063ms  |   cudaLaunch
+  0.13%  10.063ms  |     CUDAStream<double>::triad(void)
+  0.13%  10.063ms  |       void run<double>(void)
+  0.13%  10.063ms  |         main
+  0.13%  10.063ms  cuMemFree_v2
+  0.13%  10.063ms    cudart::cudaApiFree(void*)
+  0.13%  10.063ms      cudaFree
+  0.13%  10.063ms        CUDAStream<double>::__base_object_destructor__(void)
+  0.13%  10.063ms          _ZN10CUDAStreamIdED0Ev
+  0.13%  10.063ms            void run<double>(void)
+  0.13%  10.063ms              main
+
+======== Data collected at 100Hz frequency
