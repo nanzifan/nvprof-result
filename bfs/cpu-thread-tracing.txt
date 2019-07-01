@@ -1,27 +1,27 @@
-==180955== NVPROF is profiling process 180955, command: ./bfs_adapt ../../data/bfs/graph65536.txt
-==180955== Profiling application: ./bfs_adapt ../../data/bfs/graph65536.txt
-==180955== Warning: 2 records have invalid timestamps due to insufficient device buffer space. You can configure the buffer space using the option --device-buffer-size.
-==180955== Profiling result:
+==181991== NVPROF is profiling process 181991, command: ./bfs_adapt ../../data/bfs/graph65536.txt
+==181991== Profiling application: ./bfs_adapt ../../data/bfs/graph65536.txt
+==181991== Warning: 2 records have invalid timestamps due to insufficient device buffer space. You can configure the buffer space using the option --device-buffer-size.
+==181991== Profiling result:
 No kernels were profiled.
             Type  Time(%)      Time     Calls       Avg       Min       Max  Name
-      API calls:   98.86%  230.25ms         7  32.892ms  7.2630us  230.12ms  cudaMallocManaged
-                    0.78%  1.8135ms         6  302.24us     608ns  1.8093ms  cudaFree
-                    0.16%  362.96us         1  362.96us  362.96us  362.96us  cuDeviceTotalMem
-                    0.13%  307.28us        94  3.2680us     161ns  131.75us  cuDeviceGetAttribute
-                    0.03%  80.842us         2  40.421us  24.381us  56.461us  cudaLaunch
-                    0.02%  38.414us         1  38.414us  38.414us  38.414us  cudaMemAdvise
-                    0.01%  31.849us         1  31.849us  31.849us  31.849us  cuDeviceGetName
-                    0.00%  5.6570us        12     471ns     138ns  3.4540us  cudaSetupArgument
-                    0.00%  2.4550us         3     818ns     217ns  1.8750us  cuDeviceGetCount
-                    0.00%  1.2320us         2     616ns     271ns     961ns  cudaConfigureCall
-                    0.00%  1.1920us         2     596ns     254ns     938ns  cuDeviceGet
+      API calls:   98.89%  246.75ms         7  35.250ms  6.0240us  246.66ms  cudaMallocManaged
+                    0.78%  1.9534ms         6  325.56us     676ns  1.9488ms  cudaFree
+                    0.15%  367.37us         1  367.37us  367.37us  367.37us  cuDeviceTotalMem
+                    0.14%  337.30us        94  3.5880us     164ns  145.68us  cuDeviceGetAttribute
+                    0.03%  63.226us         2  31.613us  13.714us  49.512us  cudaLaunch
+                    0.01%  34.061us         1  34.061us  34.061us  34.061us  cuDeviceGetName
+                    0.00%  8.3900us         1  8.3900us  8.3900us  8.3900us  cudaMemAdvise
+                    0.00%  5.6190us        12     468ns     159ns  3.0390us  cudaSetupArgument
+                    0.00%  2.0600us         3     686ns     223ns  1.5220us  cuDeviceGetCount
+                    0.00%  1.4140us         2     707ns     333ns  1.0810us  cudaConfigureCall
+                    0.00%     700ns         2     350ns     186ns     514ns  cuDeviceGet
 
-==180955== Unified Memory profiling result:
+==181991== Unified Memory profiling result:
 Device "TITAN Xp (0)"
    Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
-      29  30.897KB  4.0000KB  64.000KB  896.0000KB  115.5520us  Host To Device
-      24  21.000KB  4.0000KB  188.00KB  504.0000KB  57.15200us  Device To Host
-      12         -         -         -           -  932.8640us  Gpu page fault groups
+      31  28.902KB  4.0000KB  64.000KB  896.0000KB  114.9440us  Host To Device
+      25  20.319KB  4.0000KB  188.00KB  508.0000KB  56.67200us  Device To Host
+      12         -         -         -           -  861.4080us  Gpu page fault groups
       32  4.0000KB  4.0000KB  4.0000KB  128.0000KB           -  Memory thrashes
-Total CPU Page faults: 154
+Total CPU Page faults: 155
 Total CPU thrashes: 32
