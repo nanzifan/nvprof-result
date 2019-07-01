@@ -10,9 +10,10 @@ echo "new folder" $newFolder
 
 commands=(
 	"track-memory-allocations on"
-	"print-gpu-trace"
+	# "print-gpu-trace"
 	"cpu-thread-tracing on"
 	"cpu-profiling on"
+	"print-gpu-trace --track-memory-allocations on"
 	)
 
 for i in "${commands[@]}"; do
