@@ -18,7 +18,7 @@ commands=(
 	# CPU options
 	"cpu-profiling on"
 	# print options
-	"trace api, gpu"	
+	"trace api --trace gpu"	
 	"print-gpu-summary"
 	"print-gpu-trace"
 	)
