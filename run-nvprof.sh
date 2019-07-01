@@ -9,11 +9,18 @@ mkdir $newFolder
 echo "new folder" $newFolder
 
 commands=(
-	# "track-memory-allocations off"
-	"print-gpu-trace"
+	# CUDA options
+	"profile-all-processes"
+	"profile-api-trace all"
 	"cpu-thread-tracing on"
-	"cpu-profiling on"
 	"track-memory-allocations on"
+	"unified-memory-profiling per-process-device"
+	# CPU options
+	"cpu-profiling on"
+	# print options
+	"trace api, gpu"	
+	"print-gpu-summary"
+	"print-gpu-trace"
 	)
 
 for i in "${commands[@]}"; do
