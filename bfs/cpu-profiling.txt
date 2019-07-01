@@ -1,50 +1,62 @@
 
 ======== CPU profiling result (bottom up):
 Time(%)      Time  Name
- 77.92%  1.89397s  ???
- 77.92%  1.89397s  | start_thread
- 77.92%  1.89397s  |   __clone
- 11.25%  273.46ms  cuDevicePrimaryCtxRetain
- 11.25%  273.46ms  | cudart::contextStateManager::initPrimaryContext(cudart::device*)
- 11.25%  273.46ms  |   cudart::contextStateManager::initDriverContext(void)
- 11.25%  273.46ms  |     cudart::contextStateManager::getRuntimeContextState(cudart::contextState**, bool)
- 11.25%  273.46ms  |       cudart::doLazyInitContextState(void)
- 11.25%  273.46ms  |         cudart::cudaApiMallocManaged(void**, unsigned long, unsigned int)
- 11.25%  273.46ms  |           cudaMallocManaged
- 11.25%  273.46ms  |             xplacer_malloc
- 11.25%  273.46ms  |               BFSGraph(int, char**)
- 11.25%  273.46ms  |                 main
-  5.00%  121.54ms  cuInit
-  5.00%  121.54ms  | cudart::globalState::loadDriverInternal(void)
-  5.00%  121.54ms  |   cudart::__loadDriverInternalUtil(void)
-  5.00%  121.54ms  |     __pthread_once_slow
-  5.00%  121.54ms  |       cudart::cuosOnce(int*, void (*) (void))
-  5.00%  121.54ms  |         cudart::globalState::initializeDriver(void)
-  5.00%  121.54ms  |           cudaMallocManaged
-  5.00%  121.54ms  |             xplacer_malloc
-  5.00%  121.54ms  |               BFSGraph(int, char**)
-  5.00%  121.54ms  |                 main
-  3.75%  91.154ms  _IO_vfscanf
-  3.75%  91.154ms  | fscanf
-  3.75%  91.154ms  |   BFSGraph(int, char**)
-  3.75%  91.154ms  |     main
-  0.83%  20.256ms  cuMemAllocManaged
-  0.83%  20.256ms  | cudart::driverHelper::mallocManagedPtr(unsigned long, unsigned int, void**)
-  0.83%  20.256ms  |   cudart::cudaApiMallocManaged(void**, unsigned long, unsigned int)
-  0.83%  20.256ms  |     cudaMallocManaged
-  0.83%  20.256ms  |       xplacer_malloc
-  0.83%  20.256ms  |         BFSGraph(int, char**)
-  0.83%  20.256ms  |           main
-  0.42%  10.128ms  ???
-  0.42%  10.128ms  | _IO_vfscanf
-  0.42%  10.128ms  |   fscanf
-  0.42%  10.128ms  |     BFSGraph(int, char**)
-  0.42%  10.128ms  |       main
-  0.42%  10.128ms  vfprintf
-  0.42%  10.128ms  | fprintf
-  0.42%  10.128ms  |   BFSGraph(int, char**)
-  0.42%  10.128ms  |     main
-  0.42%  10.128ms  BFSGraph(int, char**)
-  0.42%  10.128ms    main
+ 76.09%  4.21916s  ???
+ 76.09%  4.21916s  | start_thread
+ 76.09%  4.21916s  |   __clone
+ 19.20%  1.06484s  cuDevicePrimaryCtxRetain
+ 19.20%  1.06484s  | cudart::contextStateManager::initPrimaryContext(cudart::device*)
+ 19.20%  1.06484s  |   cudart::contextStateManager::initDriverContext(void)
+ 19.20%  1.06484s  |     cudart::contextStateManager::getRuntimeContextState(cudart::contextState**, bool)
+ 19.20%  1.06484s  |       cudart::doLazyInitContextState(void)
+ 19.20%  1.06484s  |         cudart::cudaApiMallocManaged(void**, unsigned long, unsigned int)
+ 19.20%  1.06484s  |           cudaMallocManaged
+ 19.20%  1.06484s  |             xplacer_malloc
+ 19.20%  1.06484s  |               BFSGraph(int, char**)
+ 19.20%  1.06484s  |                 main
+  2.17%  120.55ms  cuInit
+  2.17%  120.55ms  | cudart::globalState::loadDriverInternal(void)
+  2.17%  120.55ms  |   cudart::__loadDriverInternalUtil(void)
+  2.17%  120.55ms  |     __pthread_once_slow
+  2.17%  120.55ms  |       cudart::cuosOnce(int*, void (*) (void))
+  2.17%  120.55ms  |         cudart::globalState::initializeDriver(void)
+  2.17%  120.55ms  |           cudaMallocManaged
+  2.17%  120.55ms  |             xplacer_malloc
+  2.17%  120.55ms  |               BFSGraph(int, char**)
+  2.17%  120.55ms  |                 main
+  0.72%  40.182ms  _IO_vfscanf
+  0.72%  40.182ms  | fscanf
+  0.72%  40.182ms  |   BFSGraph(int, char**)
+  0.72%  40.182ms  |     main
+  0.54%  30.137ms  ???
+  0.54%  30.137ms  | _IO_vfscanf
+  0.54%  30.137ms  |   fscanf
+  0.54%  30.137ms  |     BFSGraph(int, char**)
+  0.54%  30.137ms  |       main
+  0.36%  20.091ms  cuMemAllocManaged
+  0.36%  20.091ms  | cudart::driverHelper::mallocManagedPtr(unsigned long, unsigned int, void**)
+  0.36%  20.091ms  |   cudart::cudaApiMallocManaged(void**, unsigned long, unsigned int)
+  0.36%  20.091ms  |     cudaMallocManaged
+  0.36%  20.091ms  |       xplacer_malloc
+  0.36%  20.091ms  |         BFSGraph(int, char**)
+  0.36%  20.091ms  |           main
+  0.18%  10.046ms  fscanf
+  0.18%  10.046ms  | BFSGraph(int, char**)
+  0.18%  10.046ms  |   main
+  0.18%  10.046ms  vfprintf
+  0.18%  10.046ms  | fprintf
+  0.18%  10.046ms  |   BFSGraph(int, char**)
+  0.18%  10.046ms  |     main
+  0.18%  10.046ms  BFSGraph(int, char**)
+  0.18%  10.046ms  | main
+  0.18%  10.046ms  puts
+  0.18%  10.046ms  | BFSGraph(int, char**)
+  0.18%  10.046ms  |   main
+  0.18%  10.046ms  cuMemFree_v2
+  0.18%  10.046ms    cudart::cudaApiFree(void*)
+  0.18%  10.046ms      cudaFree
+  0.18%  10.046ms        xplacer_free
+  0.18%  10.046ms          BFSGraph(int, char**)
+  0.18%  10.046ms            main
 
 ======== Data collected at 100Hz frequency
