@@ -1,0 +1,18 @@
+==188700== NVPROF is profiling process 188700, command: ./euler3d_adapt ../../data/cfd/fvcorr.domn.097K
+==188700== Profiling application: ./euler3d_adapt ../../data/cfd/fvcorr.domn.097K
+==188700== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   71.18%  305.26ms      6000  50.876us  45.410us  1.5385ms  cuda_compute_flux(int, int*, float*, float*, float*)
+                   20.32%  87.127ms      6000  14.521us  13.760us  16.032us  cuda_time_step(int, int, float*, float*, float*, float*)
+                    4.76%  20.401ms      2000  10.200us  9.4400us  13.409us  [CUDA memcpy DtoD]
+                    3.54%  15.162ms      2000  7.5810us  6.6560us  268.23us  cuda_compute_step_factor(int, float*, float*, float*)
+                    0.21%  894.25us         3  298.08us  200.68us  455.89us  cuda_initialize_variables(int, float*)
+                    0.00%  3.8080us         5     761ns     704ns     960ns  [CUDA memcpy HtoD]
+                    0.00%     960ns         1     960ns     960ns     960ns  [CUDA memset]
+
+==188700== Unified Memory profiling result:
+Device "TITAN Xp (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     160  41.274KB  4.0000KB  796.00KB  6.449219MB  727.2640us  Host To Device
+      28         -         -         -           -  2.945472ms  Gpu page fault groups
+Total CPU Page faults: 46
