@@ -27,7 +27,7 @@ for i in "${commands[@]}"; do
 	echo $i
 	filename=$(echo $i|cut -d' ' -f 1)
 	logName="$newFolder/$filename.txt"
-	/usr/local/cuda/bin/nvprof --$i --device-buffer-size 128MB --log-file $logName $1 $2	
+	/usr/local/cuda/bin/nvprof --$i --device-buffer-size 1024MB --log-file $logName $1 $2	
 done
 
 echo 'Done'
