@@ -1,15 +1,15 @@
-==182087== NVPROF is profiling process 182087, command: ./bfs_adapt ../../data/bfs/graph65536.txt
-==182087== Profiling application: ./bfs_adapt ../../data/bfs/graph65536.txt
-==182087== Warning: 2 records have invalid timestamps due to insufficient device buffer space. You can configure the buffer space using the option --device-buffer-size.
-==182087== Profiling result:
+==182433== NVPROF is profiling process 182433, command: ./bfs_adapt ../../data/bfs/graph65536.txt
+==182433== Profiling application: ./bfs_adapt ../../data/bfs/graph65536.txt
+==182433== Warning: 2 records have invalid timestamps due to insufficient device buffer space. You can configure the buffer space using the option --device-buffer-size.
+==182433== Profiling result:
 No kernels were profiled.
 
-==182087== Unified Memory profiling result:
+==182433== Unified Memory profiling result:
 Device "TITAN Xp (0)"
    Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
-      29  30.897KB  4.0000KB  64.000KB  896.0000KB  111.1680us  Host To Device
-      25  20.319KB  4.0000KB  188.00KB  508.0000KB  56.83200us  Device To Host
-      12         -         -         -           -  843.3920us  Gpu page fault groups
+      29  30.897KB  4.0000KB  64.000KB  896.0000KB  111.0400us  Host To Device
+      24  21.000KB  4.0000KB  188.00KB  504.0000KB  55.55200us  Device To Host
+      12         -         -         -           -  841.6960us  Gpu page fault groups
       32  4.0000KB  4.0000KB  4.0000KB  128.0000KB           -  Memory thrashes
-Total CPU Page faults: 155
+Total CPU Page faults: 154
 Total CPU thrashes: 32
