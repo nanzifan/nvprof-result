@@ -9,7 +9,7 @@ mkdir $newFolder
 echo "new folder" $newFolder
 
 commands=(
-	"track-memory-allocations off"
+	# "track-memory-allocations off"
 	"print-gpu-trace"
 	"cpu-thread-tracing on"
 	"cpu-profiling on"
