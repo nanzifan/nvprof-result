@@ -1,0 +1,37 @@
+==307968== NVPROF is profiling process 307968, command: ./euler3d_adapt ../../data/cfd/fvcorr.domn.097K
+==307968== Profiling application: ./euler3d_adapt ../../data/cfd/fvcorr.domn.097K
+==307968== Profiling result:
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,ms,,us,us,ms,
+"GPU activities",70.736966,302.355298,6000,50.392000,43.490000,1.989134,"cuda_compute_flux(int, int*, float*, float*, float*)"
+"GPU activities",20.798707,88.901171,6000,14.816000,14.113000,0.015969,"cuda_time_step(int, int, float*, float*, float*, float*)"
+"GPU activities",4.662460,19.929037,2000,9.964000,9.056000,0.031073,"[CUDA memcpy DtoD]"
+"GPU activities",3.605368,15.410644,2000,7.705000,6.752000,0.380687,"cuda_compute_step_factor(int, float*, float*, float*)"
+"GPU activities",0.195256,0.834594,3,278.198000,254.282000,0.306669,"cuda_initialize_variables(int, float*)"
+"GPU activities",0.000951,0.004064,5,0.812000,0.768000,0.000992,"[CUDA memcpy HtoD]"
+"GPU activities",0.000292,0.001248,1,1.248000,1.248000,0.001248,"[CUDA memset]"
+"API calls",69.649833,1077.558077,5,215511.615000,6.776000,1077.530004,"cudaMemcpyToSymbol"
+"API calls",21.654093,335.012183,2000,167.506000,27.190000,2.482936,"cudaMemcpy"
+"API calls",5.832269,90.231496,14003,6.443000,5.861000,0.590292,"cudaLaunch"
+"API calls",1.347896,20.853404,7,2979.057000,17.310000,20.233972,"cudaMallocManaged"
+"API calls",0.825675,12.774083,74006,0.172000,0.131000,0.598440,"cudaSetupArgument"
+"API calls",0.268393,4.152329,28003,0.148000,0.125000,0.004632,"cudaGetLastError"
+"API calls",0.200889,3.107974,14003,0.221000,0.143000,0.589853,"cudaConfigureCall"
+"API calls",0.060759,0.940002,10,94.000000,0.659000,0.343818,"cudaFree"
+"API calls",0.042026,0.650185,1,650.185000,650.185000,0.650185,"cudaMemset"
+"API calls",0.033055,0.511403,1,511.403000,511.403000,0.511403,"cudaGetDeviceProperties"
+"API calls",0.032498,0.502778,94,5.348000,0.154000,0.270915,"cuDeviceGetAttribute"
+"API calls",0.024471,0.378586,1,378.586000,378.586000,0.378586,"cuDeviceTotalMem"
+"API calls",0.015651,0.242138,7,34.591000,2.688000,0.186406,"cudaMemAdvise"
+"API calls",0.009277,0.143523,2,71.761000,4.414000,0.139109,"cudaThreadSynchronize"
+"API calls",0.002469,0.038192,1,38.192000,38.192000,0.038192,"cuDeviceGetName"
+"API calls",0.000448,0.006938,1,6.938000,6.938000,0.006938,"cudaSetDevice"
+"API calls",0.000136,0.002109,3,0.703000,0.166000,0.001666,"cuDeviceGetCount"
+"API calls",0.000086,0.001338,2,0.669000,0.218000,0.001120,"cuDeviceGet"
+"API calls",0.000076,0.001169,1,1.169000,1.169000,0.001169,"cudaGetDevice"
+
+==307968== Unified Memory profiling result:
+"Device","Count","Avg Size","Min Size","Max Size","Total Size","Total Time",""
+"TITAN Xp (0)",166,38.890625KB,4.000000KB,600.000000KB,6.304688MB,0.000000,"Host To Device"
+"TITAN Xp (0)",,,,,21B,0.000000,"Gpu page fault groups"
+Total CPU Page faults: 49
