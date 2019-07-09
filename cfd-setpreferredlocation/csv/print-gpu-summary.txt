@@ -1,0 +1,18 @@
+==307504== NVPROF is profiling process 307504, command: ./euler3d_adapt ../../data/cfd/fvcorr.domn.097K
+==307504== Profiling application: ./euler3d_adapt ../../data/cfd/fvcorr.domn.097K
+==307504== Profiling result:
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,ms,,us,us,ms,
+"GPU activities",70.938598,303.705515,6000,50.617000,42.914000,1.946030,"cuda_compute_flux(int, int*, float*, float*, float*)"
+"GPU activities",20.504437,87.784517,6000,14.630000,13.984000,0.016449,"cuda_time_step(int, int, float*, float*, float*, float*)"
+"GPU activities",4.684971,20.057510,2000,10.028000,9.312000,0.023297,"[CUDA memcpy DtoD]"
+"GPU activities",3.631441,15.547089,2000,7.773000,6.816000,0.387920,"cuda_compute_step_factor(int, float*, float*, float*)"
+"GPU activities",0.239319,1.024585,3,341.528000,261.226000,0.485075,"cuda_initialize_variables(int, float*)"
+"GPU activities",0.000957,0.004096,5,0.819000,0.768000,0.001024,"[CUDA memcpy HtoD]"
+"GPU activities",0.000277,0.001184,1,1.184000,1.184000,0.001184,"[CUDA memset]"
+
+==307504== Unified Memory profiling result:
+"Device","Count","Avg Size","Min Size","Max Size","Total Size","Total Time",""
+"TITAN Xp (0)",185,34.896484KB,4.000000KB,600.000000KB,6.304688MB,0.000000,"Host To Device"
+"TITAN Xp (0)",,,,,18B,0.000000,"Gpu page fault groups"
+Total CPU Page faults: 49
